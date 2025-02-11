@@ -1,0 +1,23 @@
+name: Run cypress Tests
+on: [push, pull_request]
+jobs: 
+  test: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Respository
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:  
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run cypress Tests
+        uses: cypress-io/github-action@v6
+        with: 
+          build: npm run build
+          start: npm Start
+          wait-on: 'http://localhost:4000'
+          runTests: true
