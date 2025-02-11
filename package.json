@@ -4,8 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
-    "cypress": "cypress run"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
