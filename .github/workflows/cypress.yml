@@ -13,10 +13,7 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-
-      - name: Build App
-        run: npm run build
-
+        
       - name: Run cypress Tests
         uses: cypress-io/github-action@v6
         with: 
