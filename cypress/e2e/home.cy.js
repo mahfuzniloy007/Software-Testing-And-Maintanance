@@ -39,7 +39,6 @@ describe('Login Page', () =>{
 
   //Brute force testing
   it('should for multiple failed login attempts', () =>{
- 
     for(let i = 0; i < 5; i++){
       cy.get('#email').clear().type('wrongexample@gmail.com')
       cy.get('#password').clear().type('guessedpassword')
@@ -52,11 +51,19 @@ describe('Login Page', () =>{
     });
   });
 
-   
     it('should test whether the browser auto-fills the password', () =>{
         cy.reload();
         cy.get('#email').should('not.have.value');
         cy.get('#password').should('not.have.value');
     });
 
+});
+
+it('Paste a password into the field and check to see if gets entered correctly', () =>{
+  cy.window().then(win =>{
+    win.navigator.clipboard.writeText('password123');
+  });
+
+  cy.get('#password').focus().invoke('val', '').type('{ctrl}v');
+  cy.get('#password').should('have.value', 'password123');
 });
