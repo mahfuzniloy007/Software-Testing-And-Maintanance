@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login Page</title>
-    </head>
-    <body>
-        <h1>Login Page</h1>
-        <form id="login-form">
 
-            <input type="email" id="email" placeholder="email" />
-            <br />
-            <br />
-            <input type="password" id="password" placeholder="password" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
 
-            <button id="login-button" type="submit" onClick="loginSubmit()">Submit</button>
-        </form>
+<body>
+    <h1>Login Page</h1>
+    <form id="login-form">
 
-       
-       
-    </body>
+        <input type="email" id="email" placeholder="email" />
+        <br />
+        <br />
+        <input type="password" id="password" placeholder="password" />
 
-    <script>
-        var count = 0;
-
-        function loginSubmit(){
-
-                count++;
+        <button id="login-button" type="submit" onClick="loginSubmit()">Submit</button>
+    </form>
 
 
-                const email = document.getElementById('email').value;
 
-                const password = document.getElementById('password').value;
+</body>
 
-                if(email == "test@example.com" && password == "password123"){
-                    alert('Login Successful!');
-                } else {
-                    alert('Invalid credentials');
-                }
-   //random comment
-                if(count > 1){
-                    throw new Error('You have submitted too many times');
-                }
-         }
-    </script>    
+<script>
+    var count = 0;
+
+    function loginSubmit() {
+
+        count++;
+
+
+        const email = document.getElementById('email').value;
+
+        const password = document.getElementById('password').value;
+
+        if (email == "test@example.com" && password == "password123") {
+            alert('Login Successful!');
+        } else {
+            alert('Invalid credentials');
+        }
+        //random comment
+        if (count > 1) {
+            throw new Error('You have submitted too many times');
+        }
+    }
+</script>
+
 </html>
